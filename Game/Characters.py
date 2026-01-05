@@ -91,10 +91,10 @@ class Hero(Human):
         damage = self.damage
         # Урон увеличивается, если есть кинжалы
         if self.knife:
-            damage += 10
+            damage += 15
         # Урон увеличивается, если есть кинжалы
         if self.luk:
-            damage += 5
+            damage += 10
         # Противник получает урон
         target.take_damage(damage)
         # Логирование события
@@ -103,7 +103,7 @@ class Hero(Human):
     # Атака Экскалибуром
     def attack_excalibur(self, target):
         # Если есть меч, урон увеличивается
-        damage = self.damage + 25
+        damage = self.damage + 35
         # Противник получает урон
         target.take_damage(damage)
         # Логирование события
@@ -114,7 +114,7 @@ class Hero(Human):
         # Если кол-во эликсира больше 0
         if self.health_elixir > 0:
             # Здоровье увеличивается
-            self.regenerate(20)
+            self.regenerate(25)
             # Кол-во эликсира уменьшается
             self.health_elixir -= 1
             # Логирование события
@@ -151,8 +151,8 @@ class Mag(Human):
         if self.mp >= 43:
             # К урону прибавляется сила огня
             temp = self.damage + self.fire_power
-            # Урон - случайное значение в диапазоне от 5 до урона с силой огня
-            temp_random = randint(5, temp)
+            # Урон - случайное значение в диапазоне от 10 до урона с силой огня
+            temp_random = randint(10, temp)
             # Мана уменьшается
             self.mp -= 43
             # Противник получает урон
@@ -164,7 +164,7 @@ class Mag(Human):
             # Логирование события
             log_event(f'Мерлину не хватает маны')
             # Урон + сила + интеллект
-            temp = self.damage + int(self.strength * 0.2) + int(self.iq * 0.3)
+            temp = self.damage + int(self.strength * 0.3) + int(self.iq * 0.4)
             # Урон - случайное значение в диапазоне от 5 до урона с преимуществом персонажа
             temp_random = randint(5, temp)
             # Противник получает урон
@@ -213,8 +213,8 @@ class Knight(Human):
         if self.mp >= 50:
             # Урон + сила копья + часть силы
             temp = self.damage + self.spear_power + int(self.strength*0.5)
-            # Урон - случайное значение в диапазоне от 5 до урона с преимуществом персонажа
-            temp_random = randint(5, temp)
+            # Урон - случайное значение в диапазоне от 10 до урона с преимуществом персонажа
+            temp_random = randint(10, temp)
             # Мана уменьшается
             self.mp -= 50
             # Противник получает урон
@@ -247,6 +247,7 @@ class Knight(Human):
             self.hp -= damage
 
 # Создание персонажей игры
-Artur = Hero('Артур', strength = 25, iq = 15, damage = 30, hp = 100)
-Merlin = Mag('Мерлин', strength = 15, iq = 20, damage = 10, hp = 100, mp = 100)
-Lancelot = Knight('Ланселот', strength = 30, iq = 10, damage = 20 , hp = 100, mp = 100)
+Artur = Hero('Артур', strength = 35, iq = 15, damage = 30, hp = 100)
+Merlin = Mag('Мерлин', strength = 25, iq = 30, damage = 20, hp = 100, mp = 100)
+Lancelot = Knight('Ланселот', strength = 30, iq = 10, damage = 35 , hp = 100, mp = 100)
+
