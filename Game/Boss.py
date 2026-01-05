@@ -26,8 +26,8 @@ class Boss:
     def attack(self, target):
         # Урон + сила
         temp = self.damage + self.strength
-        # Урон - случайное значение в диапазоне от 10 до урона с силой
-        temp_random = randint(10, temp)
+        # Урон - случайное значение в диапазоне от 5 до урона с силой
+        temp_random = randint(5, temp)
         # Увеличивается мана
         self.mp += 10
         # Персонаж получает урон
@@ -39,8 +39,8 @@ class Boss:
     def attack_everyone(self, target1, target2, target3):
         # Тратится мана
         self.mp -= 40
-        # Урон - случайное значение от 5 до 35
-        temp_random = randint(5, 35)
+        # Урон - случайное значение от 5 до 25
+        temp_random = randint(5, 25)
         # Все цели получают одинаковый урон
         target1.take_damage(temp_random)
         target2.take_damage(temp_random)
@@ -83,4 +83,5 @@ def boss_attack():
         pass
 
 # Создание босса
-Mordred = Boss('Мордред', strength = 40, iq = 30, damage = 25, hp = 800, mp = 250)
+Mordred = Boss('Мордред', strength = 35, iq = 25, damage = 25, hp = 800, mp = 250)
+
