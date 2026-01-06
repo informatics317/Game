@@ -1,7 +1,7 @@
 # Импорт библиотеки random для генерации случайных чисел
 from random import *
 
-# Имя файла для записи хода игры
+# Имя файла для записи хода игры (лог-файл)
 result_file = 'result.txt'
 
 '''Функция для записи событий лог-файл и вывода на экран'''
@@ -250,4 +250,5 @@ class Knight(Human):
 Artur = Hero('Артур', strength = 35, iq = 15, damage = 30, hp = 100)
 Merlin = Mag('Мерлин', strength = 25, iq = 30, damage = 20, hp = 100, mp = 100)
 Lancelot = Knight('Ланселот', strength = 30, iq = 10, damage = 35 , hp = 100, mp = 100)
+
 
