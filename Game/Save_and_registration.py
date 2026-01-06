@@ -1,6 +1,5 @@
 # Необходимые файлы
 accounts_file = 'accounts.txt'               # Имена и пароли
-result_file = 'result.txt'                   # Лог-файл (ход игры)
 save_game_file = 'game_save.txt'             # Состояние персонажа
 
 '''Сохранение игры в файл'''
@@ -138,3 +137,4 @@ def log_in_game():
 
     print('❌ Неправильное имя или пароль!')
     return None
+
